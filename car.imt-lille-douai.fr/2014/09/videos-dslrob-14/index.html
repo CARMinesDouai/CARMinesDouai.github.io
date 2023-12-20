@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en-US">
+
+<!-- Mirrored from car.imt-lille-douai.fr/2014/09/videos-dslrob-14/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Dec 2023 11:11:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+				<link rel="profile" href="../../../../gmpg.org/xfn/11.html" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Towards Live Programming in ROS with PhaROS and LRP &laquo; CAR: Components, Agents, and Robots</title>
+
+				<link rel="alternate" type="application/rss+xml" title="CAR: Components, Agents, and Robots &raquo; Feed" href="../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="CAR: Components, Agents, and Robots &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="CAR: Components, Agents, and Robots &raquo; Towards Live Programming in ROS with PhaROS and LRP Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='tw-bootstrap-css'  href='../../../wp-content/themes/the-bootstrap/css/bootstrap.minb95e.css?ver=2.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='the-bootstrap-css'  href='../../../wp-content/themes/the-bootstrap/style.min001e.css?ver=2.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-markdown-prettify-css'  href='../../../wp-content/plugins/wp-markdown/css/prettifycc1a.css?ver=1.5.1' type='text/css' media='all' />
+<script type='text/javascript' src='car.imt-lille-douai.fr/jquery.js'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/wp-markdown/js/prettify.mincc1a.js?ver=1.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://car.imt-lille-douai.fr/wp-includes/wlwmanifest.xml" />
+<link rel='prev' title='Getting current pose of robot using tf listener' href='../getting-current-pose-of-robot-using-tf-listener/index.html' />
+<link rel='next' title='Performance Benchmarking for Multi-Robot Exploration' href='../../10/performance-benchmarking-for-multi-robot-exploration-2/index.html' />
+<meta name="generator" content="WordPress 3.4.2" />
+<link rel='canonical' href='index.html' />
+<link rel='shortlink' href='../../../index3674.html?p=1052' />
+	<style type="text/css">
+				#site-description {
+			color: #1c8cd4 !important;
+		}
+			</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #EFEFEF; }
+</style>
+	<!--[if lt IE 9]>
+		<script src="http://car.imt-lille-douai.fr/wp-content/themes/the-bootstrap/js/html5shiv.min.js" type="text/javascript"></script>
+		<script src="http://car.imt-lille-douai.fr/wp-content/themes/the-bootstrap/js/respond.min.js" type="text/javascript"></script>
+	<![endif]-->
+		</head>
+
+	<body class="single single-post postid-1052 single-format-standard custom-background content-sidebar">
+		<div class="container">
+			<div id="page" class="hfeed row">
+								<header id="branding" role="banner" class="span12">
+										<hgroup>
+						<h1 id="site-title">
+							<a href="../../../index.html" title="CAR: Components, Agents, and Robots" rel="home">
+								<span>CAR: Components, Agents, and Robots</span>
+							</a>
+						</h1>
+						<h2 id="site-description">with Dynamic Languages</h2>
+					</hgroup>
+
+
+					<nav id="access" role="navigation">
+						<h3 class="assistive-text">Main menu</h3>
+						<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+						<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+												<div class="navbar">
+							<div class="navbar-inner">
+								<div class="container">
+									<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+									<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</a>
+																		<div class="nav-collapse">
+										<div class="menu-mainmenu-container"><ul id="menu-mainmenu" class="nav"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="../../../index.html">Home</a></li>
+<li id="menu-item-1137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1137"><a href="../../../about/index.html">About</a></li>
+<li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-264 dropdown" data-dropdown="dropdown"><a href="../../../location/index.html" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="../../../people/index.html">People</a></li>
+	<li id="menu-item-274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-274"><a href="../../../location/index.html">Location</a></li>
+</ul>
+</li>
+<li id="menu-item-1272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1272"><a href="../../../category/video/index.html">Video</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-244 dropdown" data-dropdown="dropdown"><a href="../../../category/events/index.html" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545"><a href="../../../robotics-week-2013/index.html">euRobotics Week 2013 @ Douai</a></li>
+	<li id="menu-item-277" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-277"><a href="http://car.mines-douai.fr/CAR2010/">Conference  CAR 2010</a></li>
+	<li id="menu-item-265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-265"><a href="../../../category/events/index.html">More Events</a></li>
+	<li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-243"><a href="../../../noury/events-and-journals/index.html">Noury&#8217;s Events</a></li>
+</ul>
+</li>
+<li id="menu-item-365" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-365 dropdown" data-dropdown="dropdown"><a href="../../../category/project/index.html" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-364" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-364"><a href="../../../category/project/caire/index.html">CAIRE</a></li>
+	<li id="menu-item-363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-363"><a href="../../../category/project/roboshop/index.html">RoboShop</a></li>
+	<li id="menu-item-1115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1115"><a href="../../../category/project/sucre/index.html">Sucré</a></li>
+	<li id="menu-item-1474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1474"><a href="../../../category/project/data/index.html">Data</a></li>
+	<li id="menu-item-1468" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1468"><a href="../../../category/project/sense-south/index.html">Sense-South</a></li>
+</ul>
+</li>
+<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="../../../software/index.html">Software</a></li>
+<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="../../../robots/index.html">Robots</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="../../../feed.html">RSS</a></li>
+</ul></div>	<form id="searchform" class="navbar-search pull-right" method="get" action="http://car.imt-lille-douai.fr/">
+						<label for="s" class="assistive-text hidden">Search</label>
+						<input type="search" class="search-query" name="s" id="s" placeholder="Search" />
+					</form>								    </div>
+								</div>
+							</div>
+						</div>
+											</nav><!-- #access -->
+									</header><!-- #branding -->
+<section id="primary" class="span8">
+
+		<div id="content" role="main">
+		<article id="post-1052" class="post-1052 post type-post status-publish format-standard hentry category-caire category-news category-pharos tag-dslrob14 tag-live-programming tag-lrp tag-pharos tag-ros">
+
+	<header class="page-header">
+		<h1 class="entry-title">Towards Live Programming in ROS with PhaROS and LRP</h1>		<div class="entry-meta"><span class="sep">Posted on </span><a href="index.html" title="09:25" rel="bookmark"><time class="entry-date" datetime="2014-09-23T09:25:23+00:00" pubdate>2014/09/23</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="../../../author/pablo/index.html" title="View all posts by Pablo Estefó" rel="author">Pablo Estefó</a></span></span>		<span class="sep"> | </span>
+		<span class="comments-link">
+			<a href="index.html#respond" title="Comment on Towards Live Programming in ROS with PhaROS and LRP"><span class="leave-reply">Leave a reply</span></a>		</span>
+		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content clearfix">
+		<p><iframe width="770" height="433" src="http://www.youtube.com/embed/svgyA1_DpjI?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>In this tutorial we will show you how to programs robot behaviour on using <a href="http://pleiad.cl/research/software/lrp">Live Robot Programming</a> over <a href="http://car.mines-douai.fr/category/software/pharos/">PhaROS</a>.</p>
+<h2>Setup</h2>
+<ol>
+<li>Follow the steps <strong>1</strong> to <strong>4</strong> of <a href="http://car.mines-douai.fr/2014/08/robulabs-first-lesson-of-lrp-through-pharos/">this post</a>.</li>
+<li>
+<p>Create a ROS node that consumes <code>/kompai2/pose</code> and <code>/kompai/scan</code> and publish in <code>/command_velocity</code>. To do this, just executing this:</p>
+<pre><code>LrpharosPackage uniqueInstance
+</code></pre>
+</li>
+<li>
+<p>Create an instance of the <code>RobulabBridge</code> class</p>
+<pre><code>RobulabBridge uniqueInstance
+</code></pre>
+</li>
+<li>To assure that everything is fine, inspect the instance of <code>RobulabBridge</code> and check that its instance variable <code>laserData</code> is not nil and its values change over the time.</li>
+<li>Open the LRP UI by right-clicking the World and selecting <strong>Live Robot Programming</strong>.</li>
+</ol>
+<h2>Stop when an obstacle is detected</h2>
+<ol>
+<li>
+<p>Ok, so now we can start writing the behavior. First we will need some variables, those are: <code>robulab</code> to manage the robot and some constants such as: <code>f_vel</code> as linear velocity, <code>t_vel</code> for angular velocity, and <code>min_distance</code> as the minimum distance between the robot and an obstacle.</p>
+<pre><code>(var robulab := [RobulabBridgr uniqueInstance ])
+(var min_distance := [0.5])
+(var f_vel := [0.25])
+(var t_vel := [0.5])
+</code></pre>
+</li>
+<li>
+<p>We define the state machine called Tito.<br />
+What we want to the robot is to go forward unless there is an obstacle in front of it so it should stop and turn to avoid it.<br />
+This could be modelled in a abstractly as two states: <code>forward</code> and <code>avoid</code>.</p>
+<pre><code>(machine Tito
+    ;; States
+    (state forward
+        (onentry [robulab value forward: f_vel value])
+    )
+    (state stop
+        (onentry [robulab value stop])
+    )
+
+    ;; Transitions
+    (on obstacle forward -&gt; stop t-avoid)
+    (on noObstacle avoid -&gt; forward t-forward)
+
+    ;; Events
+    (event obstacle [robulab value isThereAnObstacle: min_distance value])
+    (event noObstacle [(robulab value isThereAnObstacle: min_distance value) not])
+)
+</code></pre>
+</li>
+<li>
+<p>Finally, to run it, just start the machine on the <code>forward</code> state.<br />
+    (spawn Tito forward)</p>
+</li>
+<li>The robot should move linearly and stop when detects an obstacle.</li>
+</ol>
+<h2>Avoiding obstacles</h2>
+<p>Let&#8217;s add an avoiding behavior. A simple one might be turning until it detects there is no obstacle and go forward again.<br />
+Then a simple behavior that match the avoidance requisite is:</p>
+<ul>
+<li>If the obstacle is in the left side of the front: turn right</li>
+<li>If the obstacle is in the right side of the front: turn left.</li>
+</ul>
+<p><code>RobotBridge</code> provides two methods to detect obstacles on the left and right part of the front of the robot: <code>RobotBridge&gt;&gt;isThereARightObstacle:</code> and <code>RobotBridge&gt;&gt;isThereALeftObstacle:</code><br />
+Then, the idea is to <strong>turn left</strong> if there is an obstacle in the <strong>front-right</strong>, or, <strong>turn right</strong> if there is an obstacle in the <strong>front-left</strong>.</p>
+<ol>
+<li>
+<p>Add the following states</p>
+<pre><code>        (state turnLeft
+            (onentry [robulab value turn: t_vel value])
+        )
+
+        (state turnRight
+            (onentry [robulab value turn: t_vel value negated])
+        )
+</code></pre>
+</li>
+<li>
+<p>Add the corresponding transitions</p>
+<pre><code>        (on rightObstacle stop -&gt; turnLeft t-lturn)
+        (on leftObstacle stop -&gt; turnRight t-rturn)
+        (on noObstacle turnLeft -&gt; stop t-tlstop)
+        (on noObstacle turnRight -&gt; stop t-trstop)
+</code></pre>
+</li>
+<li>
+<p>And add the events</p>
+<pre><code>        (event rightObstacle [robulab value isThereARightObstacle: minDistance value])
+        (event leftObstacle [robulab value isThereALeftObstacle: minDistance value])
+</code></pre>
+</li>
+<li>Now the robot will start turning to avoid the obstacle.</li>
+</ol>
+<h2>Note</h2>
+<p>Updated version of LRP it is not necessary to add <code>value</code> after a variable.<br />
+Then,</p>
+<pre><code>    (onentry [robulab value turn: t_vel value negated])
+</code></pre>
+<p>is turned to</p>
+<pre><code>    (onentry [robulab turn: t_vel negated])
+</code></pre>
+<p>making it more readable.</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="cat-links block">Posted in <a href="../../../category/project/caire/index.html" title="View all posts in CAIRE" rel="category tag">CAIRE</a>, <a href="../../../category/news/index.html" title="View all posts in News" rel="category tag">News</a>, <a href="../../../category/software/pharos/index.html" title="View all posts in PhaROS" rel="category tag">PhaROS</a>.</span><span class="tag-links block">Tagged <a href="../../../tag/dslrob14/index.html" rel="tag">dslrob14</a>, <a href="../../../tag/live-programming/index.html" rel="tag">live programming</a>, <a href="../../../tag/lrp/index.html" rel="tag">LRP</a>, <a href="../../../tag/pharos/index.html" rel="tag">PhaROS</a>, <a href="../../../tag/ros/index.html" rel="tag">ROS</a>.</span>	</footer><!-- .entry-footer -->
+
+	</article><!-- #post-1052 -->
+								<div id="respond">
+				<h3 id="reply-title"><legend>Leave a reply</legend> <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://car.imt-lille-douai.fr/wp-comments-post.php" method="post" id="commentform">
+						<div class="form-horizontal">																				<div class="comment-form-author control-group">
+				<label for="author" class="control-label">Name</label>
+				<div class="controls">
+					<input id="author" name="author" type="text" value="" size="30" aria-required='true' />
+					<p class="help-inline"><span class="required">required</span></p>
+				</div>
+			</div>
+<div class="comment-form-email control-group">
+				<label for="email" class="control-label">Email</label>
+				<div class="controls">
+					<input id="email" name="email" type="email" value="" size="30" aria-required='true' />
+					<p class="help-inline"><span class="required">required</span>, will not be published</p>
+				</div>
+			</div>
+<div class="comment-form-url control-group">
+				<label for="url" class="control-label">Website</label>
+				<div class="controls">
+					<input id="url" name="url" type="url" value="" size="30" />
+				</div>
+			</div>
+												<div class="comment-form-comment control-group"><label class="control-label" for="comment">Comment</label><div class="controls"><textarea class="span7" id="comment" name="comment" rows="8" aria-required="true"></textarea></div></div>						<div class="form-allowed-tags control-group"><label class="control-label">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: </label><div class="controls"><pre>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </pre></div></div>
+									 <div class="form-actions">						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='1052' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e778e0040e" /></p></div></div>					</form>
+							</div><!-- #respond -->
+
+		<nav id="nav-single" class="pager">
+			<h3 class="assistive-text">Post navigation</h3>
+			<span class="next"><a href="../../10/performance-benchmarking-for-multi-robot-exploration-2/index.html" rel="next">Next Post <span class="meta-nav">&rarr;</span></a></span>
+			<span class="previous"><a href="../getting-current-pose-of-robot-using-tf-listener/index.html" rel="prev"><span class="meta-nav">&larr;</span> Previous Post</a></span>
+		</nav><!-- #nav-single -->
+
+			</div><!-- #content -->
+	</section><!-- #primary -->
+
+<section id="secondary" class="widget-area span4" role="complementary">
+			<aside id="recent-posts-3" class="widget well widget_recent_entries">		<h2 class="widget-title">News</h2>		<ul>
+				<li><a href="../../../2020/12/we-moved/index.html" title="We moved!">We moved!</a></li>
+				<li><a href="../../../2018/12/dispatching-tasks-to-multiple-pharo-vms-using-systemprocess/index.html" title="Dispatching tasks to multiple Pharo VMs using SystemProcess">Dispatching tasks to multiple Pharo VMs using SystemProcess</a></li>
+				<li><a href="../../../2018/09/pharos-awarded/index.html" title="PhaROS awarded">PhaROS awarded</a></li>
+				<li><a href="../../../2018/09/goal-planning-and-automatic-docking-of-a-pharos-based-turtlebot/index.html" title="Goal Planning and Automatic Docking of a PhaROS-based Turtlebot">Goal Planning and Automatic Docking of a PhaROS-based Turtlebot</a></li>
+				<li><a href="../../../2018/07/sense-sud-accepted/index.html" title="Sense-South Project: IoT for Environmental Surveillance">Sense-South Project: IoT for Environmental Surveillance</a></li>
+				<li><a href="../../../2017/10/pharo-mooc-is-coming/index.html" title="Pharo MOOC is coming&#8230;">Pharo MOOC is coming&#8230;</a></li>
+				<li><a href="../../../2017/06/open-phd-position-on-infrastructure-and-language-kernels-for-iot-systems/index.html" title="Open PhD Position on Infrastructure and language kernels for IoT Systems">Open PhD Position on Infrastructure and language kernels for IoT Systems</a></li>
+				<li><a href="../../../2017/04/open-post-doc-position-on-multi-robot-systems/index.html" title="Open Post-Doc position on Multi-Robot Systems">Open Post-Doc position on Multi-Robot Systems</a></li>
+				<li><a href="../../../2017/04/phd-position/index.html" title="PhD position">PhD position</a></li>
+				<li><a href="../../../2016/04/open-positions-for-2-permanent-assistant-professors-in-computer-science-and-robotics/index.html" title="Open positions for Permanent Assistant Professors in Computer Science and Robotics">Open positions for Permanent Assistant Professors in Computer Science and Robotics</a></li>
+				<li><a href="../../../2016/04/maps-for-3d-simulations/index.html" title="Maps for 3D Simulations">Maps for 3D Simulations</a></li>
+				<li><a href="../../../2016/03/learn-or-rediscover-object-programming-foundations-in-pharo/index.html" title="Learn or Rediscover Object Programming Foundations in Pharo">Learn or Rediscover Object Programming Foundations in Pharo</a></li>
+				<li><a href="../../../2016/02/sharc-2016-software-and-hardware-architectures-for-robots-control-adaptive-robotics-and-cyber-physical-systems/index.html" title="SHARC 2016 &#8221; Software and Hardware Architectures for Robots Control&#8221; + Adaptive Robotics and Cyber-Physical Systems">SHARC 2016 &#8221; Software and Hardware Architectures for Robots Control&#8221; + Adaptive Robotics and Cyber-Physical Systems</a></li>
+				<li><a href="../../../2015/12/jfsma2016/index.html" title="24th French Conference on Multi-Agent Systems (5-6 October 2016)">24th French Conference on Multi-Agent Systems (5-6 October 2016)</a></li>
+				<li><a href="../../../2015/12/hdr-defense-luc-fabresse/index.html" title="HDR Defense of Luc on 8 December 2015">HDR Defense of Luc on 8 December 2015</a></li>
+				<li><a href="../../../2015/10/alrobcfp/index.html" title="French Workshop on Software Architectures for Autonomous Robotics, Cyber-Physical Systems and Self-Adaptive Systems">French Workshop on Software Architectures for Autonomous Robotics, Cyber-Physical Systems and Self-Adaptive Systems</a></li>
+				<li><a href="../../../2015/10/install-robulab-pharos/index.html" title="Install Robulab + PhaROS">Install Robulab + PhaROS</a></li>
+				<li><a href="../../../2015/10/phd-multi-robot-exploration/index.html" title="Open Position for a PhD Student on Multi-Robot Exploration and Mapping Using Topological Maps">Open Position for a PhD Student on Multi-Robot Exploration and Mapping Using Topological Maps</a></li>
+				<li><a href="../../../2015/10/nao-writes-arbitrary-words/index.html" title="Nao Writes Arbitrary Words">Nao Writes Arbitrary Words</a></li>
+				<li><a href="../../../2015/09/phd-hot-software-update/index.html" title="Open Position for a PhD Student on Hot Software Update in Robotic Applications">Open Position for a PhD Student on Hot Software Update in Robotic Applications</a></li>
+				</ul>
+		</aside><aside id="categories-2" class="widget well widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+	<li class="cat-item cat-item-35"><a href="../../../category/events/index.html" title="View all posts filed under Events">Events</a> (13)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../category/highlights/index.html" title="View all posts filed under Highlights">Highlights</a> (6)
+</li>
+	<li class="cat-item cat-item-12"><a href="../../../category/jobs/index.html" title="View all posts filed under Jobs">Jobs</a> (10)
+</li>
+	<li class="cat-item cat-item-4"><a href="../../../category/news/index.html" title="View all posts filed under News">News</a> (90)
+</li>
+	<li class="cat-item cat-item-9"><a href="../../../category/pharo/index.html" title="View all posts filed under Pharo">Pharo</a> (30)
+</li>
+	<li class="cat-item cat-item-22"><a href="../../../category/project/index.html" title="View all posts filed under Project">Project</a> (34)
+<ul class='children'>
+	<li class="cat-item cat-item-24"><a href="../../../category/project/caire/index.html" title="View all posts filed under CAIRE">CAIRE</a> (16)
+</li>
+	<li class="cat-item cat-item-76"><a href="../../../category/project/data/index.html" title="View all posts filed under Data">Data</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="../../../category/project/roboshop/index.html" title="View all posts filed under RoboShop">RoboShop</a> (12)
+</li>
+	<li class="cat-item cat-item-75"><a href="../../../category/project/sense-south/index.html" title="View all posts filed under Sense-South">Sense-South</a> (1)
+</li>
+	<li class="cat-item cat-item-72"><a href="../../../category/project/sucre/index.html" title="View all posts filed under Sucré">Sucré</a> (8)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-43"><a href="../../../category/software/index.html" title="View all posts filed under Software">Software</a> (31)
+<ul class='children'>
+	<li class="cat-item cat-item-55"><a href="../../../category/software/jetstorm/index.html" title="With Jetstorm, you can control your robot Lego Mindstorm with Pharo.">JetStorm</a> (5)
+</li>
+	<li class="cat-item cat-item-73"><a href="../../../category/software/pharojs/index.html" title="View all posts filed under PharoJS">PharoJS</a> (2)
+</li>
+	<li class="cat-item cat-item-42"><a href="../../../category/software/pharos/index.html" title="View all posts filed under PhaROS">PhaROS</a> (24)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-45"><a href="../../../category/technotes/index.html" title="View all posts filed under TechNotes">TechNotes</a> (13)
+</li>
+	<li class="cat-item cat-item-74"><a href="../../../category/video/index.html" title="View all posts filed under Video">Video</a> (19)
+</li>
+		</ul>
+</aside><aside id="meta-3" class="widget well widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+						<li><a href="../../../wp-login.html">Log in</a></li>
+			<li><a href="../../../feed/index.html" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="../../../comments/feed/index.html" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</aside><aside id="text-2" class="widget well widget_text">			<div class="textwidget"><!--CauseRibbon: I love Smalltalk-->
+<script type="text/javascript"> window.onload = function() { var _crjs = document.createElement('script'); _crjs.type = 'text/javascript'; _crjs.async = true; _crjs.src = "https://www.hugedomains.com/domain_profile.cfm?d=causeribbon.com"; var _crjs_p = document.getElementsByTagName('script')[0]; _crjs_p.parentNode.insertBefore(_crjs, _crjs_p); } </script> </div>
+		</aside></section><!-- #secondary .widget-area -->
+				<footer id="colophon" role="contentinfo" class="span12">
+										<div id="page-footer" class="well clearfix">
+						<span class="credits alignleft">&copy; 2023 <a href="../../../index.html">CAR: Components, Agents, and Robots</a>, all rights reserved.</span>						<div id="site-generator">
+							<a	href="http://wordpress.org/"
+								title="Semantic Personal Publishing Platform"
+								target="_blank"
+								rel="generator">Proudly powered by WordPress</a>
+						</div>
+					</div><!-- #page-footer .well .clearfix -->
+									</footer><!-- #colophon -->
+							</div><!-- #page -->
+		</div><!-- .container -->
+	<!-- 37 queries. 0.406 seconds. -->
+	<script type='text/javascript' src='../../../wp-content/themes/the-bootstrap/js/bootstrap.minb95e.js?ver=2.0.3'></script>
+<script type='text/javascript' src='../../../wp-content/themes/the-bootstrap/js/the-bootstrap.min001e.js?ver=2.0.0'></script>
+<script type='text/javascript' src='http://car.imt-lille-douai.fr/wp-includes/js/comment-reply.js?ver=3.4.2'></script>
+	</body>
+
+<!-- Mirrored from car.imt-lille-douai.fr/2014/09/videos-dslrob-14/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Dec 2023 11:11:33 GMT -->
+</html>

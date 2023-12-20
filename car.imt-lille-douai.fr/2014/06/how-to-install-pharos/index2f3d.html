@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en-US">
+
+<!-- Mirrored from car.imt-lille-douai.fr/2014/06/how-to-install-pharos/?replytocom=12885 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Dec 2023 13:01:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+				<link rel="profile" href="../../../../gmpg.org/xfn/11.html" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>How-to install PhaROS &laquo; CAR: Components, Agents, and Robots</title>
+
+				<link rel="alternate" type="application/rss+xml" title="CAR: Components, Agents, and Robots &raquo; Feed" href="../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="CAR: Components, Agents, and Robots &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="CAR: Components, Agents, and Robots &raquo; How-to install PhaROS Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='tw-bootstrap-css'  href='../../../wp-content/themes/the-bootstrap/css/bootstrap.minb95e.css?ver=2.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='the-bootstrap-css'  href='../../../wp-content/themes/the-bootstrap/style.min001e.css?ver=2.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-markdown-prettify-css'  href='../../../wp-content/plugins/wp-markdown/css/prettifycc1a.css?ver=1.5.1' type='text/css' media='all' />
+<script type='text/javascript' src='car.imt-lille-douai.fr/jquery.js'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/wp-markdown/js/prettify.mincc1a.js?ver=1.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://car.imt-lille-douai.fr/wp-includes/wlwmanifest.xml" />
+<link rel='prev' title='Technical Report for JetStorm' href='../technical-report-for-jetstorm/index.html' />
+<link rel='next' title='Voice Reconigtion and Obstacle Avoidance with Nao' href='../../07/voice-reconigtion-and-obstacle-avoidance-with-nao/index.html' />
+<meta name="generator" content="WordPress 3.4.2" />
+<link rel='canonical' href='index.html' />
+<link rel='shortlink' href='../../../index914d.html?p=852' />
+<meta name='robots' content='noindex,nofollow' />
+	<style type="text/css">
+				#site-description {
+			color: #1c8cd4 !important;
+		}
+			</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #EFEFEF; }
+</style>
+	<!--[if lt IE 9]>
+		<script src="http://car.imt-lille-douai.fr/wp-content/themes/the-bootstrap/js/html5shiv.min.js" type="text/javascript"></script>
+		<script src="http://car.imt-lille-douai.fr/wp-content/themes/the-bootstrap/js/respond.min.js" type="text/javascript"></script>
+	<![endif]-->
+		</head>
+
+	<body class="single single-post postid-852 single-format-standard custom-background content-sidebar">
+		<div class="container">
+			<div id="page" class="hfeed row">
+								<header id="branding" role="banner" class="span12">
+										<hgroup>
+						<h1 id="site-title">
+							<a href="http://car.imt-lille-douai.fr/" title="CAR: Components, Agents, and Robots" rel="home">
+								<span>CAR: Components, Agents, and Robots</span>
+							</a>
+						</h1>
+						<h2 id="site-description">with Dynamic Languages</h2>
+					</hgroup>
+
+
+					<nav id="access" role="navigation">
+						<h3 class="assistive-text">Main menu</h3>
+						<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+						<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+												<div class="navbar">
+							<div class="navbar-inner">
+								<div class="container">
+									<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+									<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</a>
+																		<div class="nav-collapse">
+										<div class="menu-mainmenu-container"><ul id="menu-mainmenu" class="nav"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="http://car.imt-lille-douai.fr/">Home</a></li>
+<li id="menu-item-1137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1137"><a href="http://car.imt-lille-douai.fr/about/">About</a></li>
+<li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-264 dropdown" data-dropdown="dropdown"><a href="http://car.imt-lille-douai.fr/location/" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14"><a href="http://car.imt-lille-douai.fr/people/">People</a></li>
+	<li id="menu-item-274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-274"><a href="http://car.imt-lille-douai.fr/location/">Location</a></li>
+</ul>
+</li>
+<li id="menu-item-1272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1272"><a href="http://car.imt-lille-douai.fr/category/video/">Video</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-244 dropdown" data-dropdown="dropdown"><a href="http://car.imt-lille-douai.fr/category/events/" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545"><a href="http://car.imt-lille-douai.fr/robotics-week-2013/">euRobotics Week 2013 @ Douai</a></li>
+	<li id="menu-item-277" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-277"><a href="http://car.mines-douai.fr/CAR2010/">Conference  CAR 2010</a></li>
+	<li id="menu-item-265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-265"><a href="http://car.imt-lille-douai.fr/category/events/">More Events</a></li>
+	<li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-243"><a href="http://car.imt-lille-douai.fr/noury/events-and-journals/">Noury&#8217;s Events</a></li>
+</ul>
+</li>
+<li id="menu-item-365" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-365 dropdown" data-dropdown="dropdown"><a href="http://car.imt-lille-douai.fr/category/project/" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-364" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-364"><a href="http://car.imt-lille-douai.fr/category/project/caire/">CAIRE</a></li>
+	<li id="menu-item-363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-363"><a href="http://car.imt-lille-douai.fr/category/project/roboshop/">RoboShop</a></li>
+	<li id="menu-item-1115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1115"><a href="http://car.imt-lille-douai.fr/category/project/sucre/">Sucré</a></li>
+	<li id="menu-item-1474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1474"><a href="http://car.imt-lille-douai.fr/category/project/data/">Data</a></li>
+	<li id="menu-item-1468" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1468"><a href="http://car.imt-lille-douai.fr/category/project/sense-south/">Sense-South</a></li>
+</ul>
+</li>
+<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="http://car.imt-lille-douai.fr/software/">Software</a></li>
+<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="http://car.imt-lille-douai.fr/robots/">Robots</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="http://car.imt-lille-douai.fr/feed">RSS</a></li>
+</ul></div>	<form id="searchform" class="navbar-search pull-right" method="get" action="http://car.imt-lille-douai.fr/">
+						<label for="s" class="assistive-text hidden">Search</label>
+						<input type="search" class="search-query" name="s" id="s" placeholder="Search" />
+					</form>								    </div>
+								</div>
+							</div>
+						</div>
+											</nav><!-- #access -->
+									</header><!-- #branding -->
+<section id="primary" class="span8">
+
+		<div id="content" role="main">
+		<article id="post-852" class="post-852 post type-post status-publish format-standard hentry category-news category-pharos category-software category-technotes">
+
+	<header class="page-header">
+		<h1 class="entry-title">How-to install PhaROS</h1>		<div class="entry-meta"><span class="sep">Posted on </span><a href="http://car.imt-lille-douai.fr/2014/06/how-to-install-pharos/" title="16:17" rel="bookmark"><time class="entry-date" datetime="2014-06-18T16:17:10+00:00" pubdate>2014/06/18</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://car.imt-lille-douai.fr/author/luc/" title="View all posts by luc" rel="author">luc</a></span></span>		<span class="sep"> | </span>
+		<span class="comments-link">
+			<a href="http://car.imt-lille-douai.fr/2014/06/how-to-install-pharos/#comments" title="Comment on How-to install PhaROS"><strong>2</strong> Replies</a>		</span>
+		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content clearfix">
+		<p><strong>deprecated</strong></p>
+<p>cf. <a title="PhaROS Install notes" href="https://github.com/CARMinesDouai/pharos/wiki/Install-PhaROS" target="_blank">https://github.com/CARMinesDouai/pharos/wiki/Install-PhaROS</a></p>
+<p><strong>To install:</strong></p>
+<ol>
+<li><a href="http://www.ubuntu.com/download/desktop">Install Ubuntu 14.04 64bits</a></li>
+<li>Install curl
+<pre>sudo apt-get install curl</pre>
+</li>
+<li><a href="http://wiki.ros.org/indigo/Installation/Ubuntu">Install ROS Indigo</a></li>
+<li>Install PhaROS
+<pre>curl http://car.mines-douai.fr/scripts/PhaROS | bash</pre>
+</li>
+<li>Test the installation
+<pre>source ~/.bashrc
+pharos create myfirstpharospackage
+rosrun myfirstpharospackage edit</pre>
+</li>
+<li>Enjoy!</li>
+</ol>
+<p><strong>To uninstall</strong> (why would you need that? ;-)):</p>
+<pre>~/PhaROS-bin/pharos_uninstall</pre>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="cat-links block">Posted in <a href="http://car.imt-lille-douai.fr/category/news/" title="View all posts in News" rel="category tag">News</a>, <a href="http://car.imt-lille-douai.fr/category/software/pharos/" title="View all posts in PhaROS" rel="category tag">PhaROS</a>, <a href="http://car.imt-lille-douai.fr/category/software/" title="View all posts in Software" rel="category tag">Software</a>, <a href="http://car.imt-lille-douai.fr/category/technotes/" title="View all posts in TechNotes" rel="category tag">TechNotes</a>.</span>	</footer><!-- .entry-footer -->
+
+	</article><!-- #post-852 -->
+							<div id="comments">
+			<h2 id="comments-title">
+				2 thoughts on &ldquo;<span>How-to install PhaROS</span>&rdquo;			</h2>
+
+
+			<ol class="commentlist unstyled">
+
+		<li id="li-comment-9031" class="pingback even thread-even depth-1">
+			<p class="row">
+				<strong class="ping-label span1">Pingback:</strong>
+				<span class="span7"><a href='http://car.mines-douai.fr/2014/08/testing-robulab/' rel='external nofollow' class='url'>Testing Robulab &laquo; CAR: Components, Agents, and Robots</a></span>
+			</p>
+
+	</li>
+
+		<li  id="li-comment-12885" class="comment byuser comment-author-noury odd alt thread-odd thread-alt depth-1">
+			<article id="comment-12885" class="comment row">
+				<div class="comment-author-avatar span1">
+					<img alt='' src='http://0.gravatar.com/avatar/0d5a021ee4ccb95877fb357dab818cf5?s=70&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D70&amp;r=G' class='avatar avatar-70 photo' height='70' width='70' />				</div>
+				<footer class="comment-meta span7">
+					<p class="comment-author vcard">
+						<span class="fn"><a href='http://car.mines-douai.fr/noury' rel='external nofollow' class='url'>noury</a></span> <span class="says">said</span> on <a href="http://car.imt-lille-douai.fr/2014/06/how-to-install-pharos/#comment-12885"><time pubdate datetime="2014-09-17T10:54:47+00:00">2014/09/17 at 10:54</time></a>:					</p><!-- .comment-author .vcard -->
+
+
+				</footer><!-- .comment-meta -->
+
+				<div class="comment-content span7">
+					<p>ROS does not support capitals in package names. So, be sure to use names with all letters in lowercase.</p>
+<a class='comment-reply-link' href='http://car.imt-lille-douai.fr/2014/06/how-to-install-pharos/?replytocom=12885#respond' onclick='return addComment.moveForm("comment-12885", "12885", "respond", "852")'>Reply <span>&darr;</span></a>				</div><!-- .comment-content -->
+			</article><!-- #comment-12885 .comment -->
+
+	</li>
+			</ol><!-- .commentlist .unstyled -->
+
+
+		</div><!-- #comments -->
+				<div id="respond">
+				<h3 id="reply-title"><legend>Leave a reply to <a href="#comment-12885">noury</a></legend> <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://car.imt-lille-douai.fr/2014/06/how-to-install-pharos/#respond">Cancel reply</a></small></h3>
+									<form action="http://car.imt-lille-douai.fr/wp-comments-post.php" method="post" id="commentform">
+						<div class="form-horizontal">																				<div class="comment-form-author control-group">
+				<label for="author" class="control-label">Name</label>
+				<div class="controls">
+					<input id="author" name="author" type="text" value="" size="30" aria-required='true' />
+					<p class="help-inline"><span class="required">required</span></p>
+				</div>
+			</div>
+<div class="comment-form-email control-group">
+				<label for="email" class="control-label">Email</label>
+				<div class="controls">
+					<input id="email" name="email" type="email" value="" size="30" aria-required='true' />
+					<p class="help-inline"><span class="required">required</span>, will not be published</p>
+				</div>
+			</div>
+<div class="comment-form-url control-group">
+				<label for="url" class="control-label">Website</label>
+				<div class="controls">
+					<input id="url" name="url" type="url" value="" size="30" />
+				</div>
+			</div>
+												<div class="comment-form-comment control-group"><label class="control-label" for="comment">Comment</label><div class="controls"><textarea class="span7" id="comment" name="comment" rows="8" aria-required="true"></textarea></div></div>						<div class="form-allowed-tags control-group"><label class="control-label">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: </label><div class="controls"><pre>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </pre></div></div>
+									 <div class="form-actions">						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='852' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='12885' />
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e5f7dc1f8f" /></p></div></div>					</form>
+							</div><!-- #respond -->
+
+		<nav id="nav-single" class="pager">
+			<h3 class="assistive-text">Post navigation</h3>
+			<span class="next"><a href="http://car.imt-lille-douai.fr/2014/07/voice-reconigtion-and-obstacle-avoidance-with-nao/" rel="next">Next Post <span class="meta-nav">&rarr;</span></a></span>
+			<span class="previous"><a href="http://car.imt-lille-douai.fr/2014/06/technical-report-for-jetstorm/" rel="prev"><span class="meta-nav">&larr;</span> Previous Post</a></span>
+		</nav><!-- #nav-single -->
+
+			</div><!-- #content -->
+	</section><!-- #primary -->
+
+<section id="secondary" class="widget-area span4" role="complementary">
+			<aside id="recent-posts-3" class="widget well widget_recent_entries">		<h2 class="widget-title">News</h2>		<ul>
+				<li><a href="http://car.imt-lille-douai.fr/2020/12/we-moved/" title="We moved!">We moved!</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2018/12/dispatching-tasks-to-multiple-pharo-vms-using-systemprocess/" title="Dispatching tasks to multiple Pharo VMs using SystemProcess">Dispatching tasks to multiple Pharo VMs using SystemProcess</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2018/09/pharos-awarded/" title="PhaROS awarded">PhaROS awarded</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2018/09/goal-planning-and-automatic-docking-of-a-pharos-based-turtlebot/" title="Goal Planning and Automatic Docking of a PhaROS-based Turtlebot">Goal Planning and Automatic Docking of a PhaROS-based Turtlebot</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2018/07/sense-sud-accepted/" title="Sense-South Project: IoT for Environmental Surveillance">Sense-South Project: IoT for Environmental Surveillance</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2017/10/pharo-mooc-is-coming/" title="Pharo MOOC is coming&#8230;">Pharo MOOC is coming&#8230;</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2017/06/open-phd-position-on-infrastructure-and-language-kernels-for-iot-systems/" title="Open PhD Position on Infrastructure and language kernels for IoT Systems">Open PhD Position on Infrastructure and language kernels for IoT Systems</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2017/04/open-post-doc-position-on-multi-robot-systems/" title="Open Post-Doc position on Multi-Robot Systems">Open Post-Doc position on Multi-Robot Systems</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2017/04/phd-position/" title="PhD position">PhD position</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2016/04/open-positions-for-2-permanent-assistant-professors-in-computer-science-and-robotics/" title="Open positions for Permanent Assistant Professors in Computer Science and Robotics">Open positions for Permanent Assistant Professors in Computer Science and Robotics</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2016/04/maps-for-3d-simulations/" title="Maps for 3D Simulations">Maps for 3D Simulations</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2016/03/learn-or-rediscover-object-programming-foundations-in-pharo/" title="Learn or Rediscover Object Programming Foundations in Pharo">Learn or Rediscover Object Programming Foundations in Pharo</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2016/02/sharc-2016-software-and-hardware-architectures-for-robots-control-adaptive-robotics-and-cyber-physical-systems/" title="SHARC 2016 &#8221; Software and Hardware Architectures for Robots Control&#8221; + Adaptive Robotics and Cyber-Physical Systems">SHARC 2016 &#8221; Software and Hardware Architectures for Robots Control&#8221; + Adaptive Robotics and Cyber-Physical Systems</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/12/jfsma2016/" title="24th French Conference on Multi-Agent Systems (5-6 October 2016)">24th French Conference on Multi-Agent Systems (5-6 October 2016)</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/12/hdr-defense-luc-fabresse/" title="HDR Defense of Luc on 8 December 2015">HDR Defense of Luc on 8 December 2015</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/10/alrobcfp/" title="French Workshop on Software Architectures for Autonomous Robotics, Cyber-Physical Systems and Self-Adaptive Systems">French Workshop on Software Architectures for Autonomous Robotics, Cyber-Physical Systems and Self-Adaptive Systems</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/10/install-robulab-pharos/" title="Install Robulab + PhaROS">Install Robulab + PhaROS</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/10/phd-multi-robot-exploration/" title="Open Position for a PhD Student on Multi-Robot Exploration and Mapping Using Topological Maps">Open Position for a PhD Student on Multi-Robot Exploration and Mapping Using Topological Maps</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/10/nao-writes-arbitrary-words/" title="Nao Writes Arbitrary Words">Nao Writes Arbitrary Words</a></li>
+				<li><a href="http://car.imt-lille-douai.fr/2015/09/phd-hot-software-update/" title="Open Position for a PhD Student on Hot Software Update in Robotic Applications">Open Position for a PhD Student on Hot Software Update in Robotic Applications</a></li>
+				</ul>
+		</aside><aside id="categories-2" class="widget well widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+	<li class="cat-item cat-item-35"><a href="http://car.imt-lille-douai.fr/category/events/" title="View all posts filed under Events">Events</a> (13)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://car.imt-lille-douai.fr/category/highlights/" title="View all posts filed under Highlights">Highlights</a> (6)
+</li>
+	<li class="cat-item cat-item-12"><a href="http://car.imt-lille-douai.fr/category/jobs/" title="View all posts filed under Jobs">Jobs</a> (10)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://car.imt-lille-douai.fr/category/news/" title="View all posts filed under News">News</a> (90)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://car.imt-lille-douai.fr/category/pharo/" title="View all posts filed under Pharo">Pharo</a> (30)
+</li>
+	<li class="cat-item cat-item-22"><a href="http://car.imt-lille-douai.fr/category/project/" title="View all posts filed under Project">Project</a> (34)
+<ul class='children'>
+	<li class="cat-item cat-item-24"><a href="http://car.imt-lille-douai.fr/category/project/caire/" title="View all posts filed under CAIRE">CAIRE</a> (16)
+</li>
+	<li class="cat-item cat-item-76"><a href="http://car.imt-lille-douai.fr/category/project/data/" title="View all posts filed under Data">Data</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://car.imt-lille-douai.fr/category/project/roboshop/" title="View all posts filed under RoboShop">RoboShop</a> (12)
+</li>
+	<li class="cat-item cat-item-75"><a href="http://car.imt-lille-douai.fr/category/project/sense-south/" title="View all posts filed under Sense-South">Sense-South</a> (1)
+</li>
+	<li class="cat-item cat-item-72"><a href="http://car.imt-lille-douai.fr/category/project/sucre/" title="View all posts filed under Sucré">Sucré</a> (8)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-43"><a href="http://car.imt-lille-douai.fr/category/software/" title="View all posts filed under Software">Software</a> (31)
+<ul class='children'>
+	<li class="cat-item cat-item-55"><a href="http://car.imt-lille-douai.fr/category/software/jetstorm/" title="With Jetstorm, you can control your robot Lego Mindstorm with Pharo.">JetStorm</a> (5)
+</li>
+	<li class="cat-item cat-item-73"><a href="http://car.imt-lille-douai.fr/category/software/pharojs/" title="View all posts filed under PharoJS">PharoJS</a> (2)
+</li>
+	<li class="cat-item cat-item-42"><a href="http://car.imt-lille-douai.fr/category/software/pharos/" title="View all posts filed under PhaROS">PhaROS</a> (24)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-45"><a href="http://car.imt-lille-douai.fr/category/technotes/" title="View all posts filed under TechNotes">TechNotes</a> (13)
+</li>
+	<li class="cat-item cat-item-74"><a href="http://car.imt-lille-douai.fr/category/video/" title="View all posts filed under Video">Video</a> (19)
+</li>
+		</ul>
+</aside><aside id="meta-3" class="widget well widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+						<li><a href="http://car.imt-lille-douai.fr/wp-login.php">Log in</a></li>
+			<li><a href="http://car.imt-lille-douai.fr/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://car.imt-lille-douai.fr/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</aside><aside id="text-2" class="widget well widget_text">			<div class="textwidget"><!--CauseRibbon: I love Smalltalk-->
+<script type="text/javascript"> window.onload = function() { var _crjs = document.createElement('script'); _crjs.type = 'text/javascript'; _crjs.async = true; _crjs.src = "http://www.causeribbon.com/crjs_dbf8d76e9009eb6f4db0f988bb97599a.js"; var _crjs_p = document.getElementsByTagName('script')[0]; _crjs_p.parentNode.insertBefore(_crjs, _crjs_p); } </script> </div>
+		</aside></section><!-- #secondary .widget-area -->
+				<footer id="colophon" role="contentinfo" class="span12">
+										<div id="page-footer" class="well clearfix">
+						<span class="credits alignleft">&copy; 2023 <a href="http://car.imt-lille-douai.fr/">CAR: Components, Agents, and Robots</a>, all rights reserved.</span>						<div id="site-generator">
+							<a	href="http://wordpress.org/"
+								title="Semantic Personal Publishing Platform"
+								target="_blank"
+								rel="generator">Proudly powered by WordPress</a>
+						</div>
+					</div><!-- #page-footer .well .clearfix -->
+									</footer><!-- #colophon -->
+							</div><!-- #page -->
+		</div><!-- .container -->
+	<!-- 34 queries. 0.267 seconds. -->
+	<script type='text/javascript' src='http://car.imt-lille-douai.fr/wp-content/themes/the-bootstrap/js/bootstrap.min.js?ver=2.0.3'></script>
+<script type='text/javascript' src='http://car.imt-lille-douai.fr/wp-content/themes/the-bootstrap/js/the-bootstrap.min.js?ver=2.0.0'></script>
+<script type='text/javascript' src='http://car.imt-lille-douai.fr/wp-includes/js/comment-reply.js?ver=3.4.2'></script>
+	</body>
+
+<!-- Mirrored from car.imt-lille-douai.fr/2014/06/how-to-install-pharos/?replytocom=12885 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Dec 2023 13:01:32 GMT -->
+</html>

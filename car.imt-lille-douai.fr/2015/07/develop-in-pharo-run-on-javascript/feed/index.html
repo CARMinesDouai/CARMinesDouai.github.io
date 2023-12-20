@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		>
+<channel>
+	<title>Comments on: Develop in Pharo, Run on JavaScript</title>
+	<atom:link href="http://car.imt-lille-douai.fr/2015/07/develop-in-pharo-run-on-javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>http://car.imt-lille-douai.fr/2015/07/develop-in-pharo-run-on-javascript/</link>
+	<description>with Dynamic Languages</description>
+	<lastBuildDate>Mon, 22 Jan 2018 13:42:57 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.4.2</generator>
+	<item>
+		<title>By: Harsha Kadekar</title>
+		<link>http://car.imt-lille-douai.fr/2015/07/develop-in-pharo-run-on-javascript/#comment-26099</link>
+		<dc:creator>Harsha Kadekar</dc:creator>
+		<pubDate>Fri, 06 Nov 2015 11:31:01 +0000</pubDate>
+		<guid isPermaLink="false">http://car.mines-douai.fr/?p=1215#comment-26099</guid>
+		<description>Hi,
+
+I tried first step - 
+workspace := JbWorkspaceForWeb open.
+
+The next sentence is throwing error
+workspace javaScriptBridge loadClass: JbCounter.
+
+It is throwing Message Does not understand exception
+
+Could you please help me on this. I am new to pharo and smalltalk. I was able to produce some visualization using Roassal. Now want to convert them into javascript</description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>I tried first step &#8211;<br />
+workspace := JbWorkspaceForWeb open.</p>
+<p>The next sentence is throwing error<br />
+workspace javaScriptBridge loadClass: JbCounter.</p>
+<p>It is throwing Message Does not understand exception</p>
+<p>Could you please help me on this. I am new to pharo and smalltalk. I was able to produce some visualization using Roassal. Now want to convert them into javascript</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: noury</title>
+		<link>http://car.imt-lille-douai.fr/2015/07/develop-in-pharo-run-on-javascript/#comment-24746</link>
+		<dc:creator>noury</dc:creator>
+		<pubDate>Tue, 14 Jul 2015 13:39:28 +0000</pubDate>
+		<guid isPermaLink="false">http://car.mines-douai.fr/?p=1215#comment-24746</guid>
+		<description>You need to launch PharoJS workspace. In a plain workspace or GT playground evaluate the following expression:
+
+&lt;code&gt;
+workspace := JbWorkspaceForWeb open.
+&lt;/code&gt;
+
+This will open pink workspace, this is the current PharoJS workspace. It also launches a server on Pharo side and opens a web browser that is connected to the server. Now, you can evaluate any Smalltalk expression, and see it performing on the web browser.  
+
+To load a class defined in Pharo, say the JbCounter example provided with PharoJS, you need to go back to the plain Pharo workspace and evaluate:
+
+&lt;code&gt;
+workspace javaScriptBridge loadClass: JbCounter.
+&lt;/code&gt;
+
+You&#039;ll see on the web browser that the JbCounter javascript code was generated and loaded. Now, you can play with the JbCoutner in the PharoJS (pink) workspace, and evaluate expressions such as:
+
+&lt;code&gt;
+counter := JbCounter new.
+counter count.
+counter increment.
+&lt;/code&gt;
+
+I&#039;m making a video showing this and more. It will be soon online :-)</description>
+		<content:encoded><![CDATA[<p>You need to launch PharoJS workspace. In a plain workspace or GT playground evaluate the following expression:</p>
+<p><code><br />
+workspace := JbWorkspaceForWeb open.<br />
+</code></p>
+<p>This will open pink workspace, this is the current PharoJS workspace. It also launches a server on Pharo side and opens a web browser that is connected to the server. Now, you can evaluate any Smalltalk expression, and see it performing on the web browser.  </p>
+<p>To load a class defined in Pharo, say the JbCounter example provided with PharoJS, you need to go back to the plain Pharo workspace and evaluate:</p>
+<p><code><br />
+workspace javaScriptBridge loadClass: JbCounter.<br />
+</code></p>
+<p>You&#8217;ll see on the web browser that the JbCounter javascript code was generated and loaded. Now, you can play with the JbCoutner in the PharoJS (pink) workspace, and evaluate expressions such as:</p>
+<p><code><br />
+counter := JbCounter new.<br />
+counter count.<br />
+counter increment.<br />
+</code></p>
+<p>I&#8217;m making a video showing this and more. It will be soon online :-)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: AndT Burnett</title>
+		<link>http://car.imt-lille-douai.fr/2015/07/develop-in-pharo-run-on-javascript/#comment-24735</link>
+		<dc:creator>AndT Burnett</dc:creator>
+		<pubDate>Sun, 12 Jul 2015 19:28:59 +0000</pubDate>
+		<guid isPermaLink="false">http://car.mines-douai.fr/?p=1215#comment-24735</guid>
+		<description>this looks very cool indeed. 
+
+I have downloaded the code, and the web browser shows that the JavaScript functions are loaded when I go to local host:12345.
+
+However, evaluating code in the workspace doesn&#039;t show anything in the browser console. No errors in either the web browser it pharo 4.0.
+
+Where should I start to looking for the problem?</description>
+		<content:encoded><![CDATA[<p>this looks very cool indeed. </p>
+<p>I have downloaded the code, and the web browser shows that the JavaScript functions are loaded when I go to local host:12345.</p>
+<p>However, evaluating code in the workspace doesn&#8217;t show anything in the browser console. No errors in either the web browser it pharo 4.0.</p>
+<p>Where should I start to looking for the problem?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
